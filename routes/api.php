@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\PoliticalPartyController;
+use App\Http\Controllers\VoterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::apiResource('candidates', CandidateController::class);
+Route::apiResource('political_parties', PoliticalPartyController::class);
+Route::apiResource('voters', VoterController::class);
