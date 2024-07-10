@@ -31,7 +31,7 @@ class CandidateController extends Controller
         try {
             $valitade = $request->validate([
                 'name' => 'required|string|max:255',
-                'number' => 'required|string|min:5|max:5',
+                'number' => 'nullable|string|min:5|max:5',
                 'coalition' => 'nullable|string',
                 'political_party_id' => 'required|integer'
             ]);
@@ -74,7 +74,7 @@ class CandidateController extends Controller
 
             $valitade = $request->validate([
                 'name' => 'required|string|max:255',
-                'number' => 'required|string|min:5|max:5',
+                'number' => 'nullable|string|min:5|max:5',
                 'coalition' => 'nullable|text',
                 'political_party_id' => 'required|integer'
             ]);
